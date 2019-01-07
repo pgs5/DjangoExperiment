@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+{% block content %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h2>You have logged out</h2>
+            <p class="article-content"> Want to return? <a href="{%url 'login'%}">Login</a></p>
+          </div>
+        </article>
+{% endblock content %}
