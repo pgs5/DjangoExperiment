@@ -2,3 +2,5 @@
 manage.py
 media/*
 polls/*
+*/*/*.cpython-36pyc
+*/migrations/*
