@@ -3,12 +3,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 
-def blog_home(request):
-    context={
-        'posts' : Post.objects.all()
-        }
-    return render (request, 'blog/home.html', context)
-
 def blog_about(request):
     return render(request, 'blog/about.html', {'title':"About"})
 
@@ -17,6 +11,8 @@ class PostListView(ListView):
     template_name = 'blog/home.html'#APP/MODEL_VIEWTYPE.html
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 3
+
 
 class PostDetailView(DetailView):
     model = Post

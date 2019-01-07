@@ -19,6 +19,7 @@ from django.urls import path, include
 from Users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.views import PostListView
 
 
 urlpatterns = [
@@ -29,8 +30,9 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name = 'Users/logout.html'), name='logout'),
     path('users/', user_views.register, name = 'register'),
     path('profile/', user_views.profile, name ='profile'),
-    path('',include('blog.urls'))
-
+    path('blog/',include('blog.urls')),
+    path('', PostListView.as_view(), name= 'home'),
+    path('sheet-music/', include('sheet.urls'))
 ]
 
 if settings.DEBUG:

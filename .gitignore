@@ -1,4 +1,10 @@
-.git
+media/
+polls/
+*.pyc
+*/__pycache__/*
+*/migrations__/*
+
+db.sqlite3
 manage.py
-media/*
-polls/*
+.git
+.gitignore
