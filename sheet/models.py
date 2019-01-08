@@ -8,7 +8,7 @@ class Sheet(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
     date_posted = models.DateTimeField(default = timezone.now)
-    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    author = models.ForeignKey(User, on_delete = models.CASCADE)
     composer = models.TextField()
     sheet_pdf = models.FileField( default = 'default.jpg', upload_to = 'sheet_music')
     initial_key = models.CharField(max_length=16)
