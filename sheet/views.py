@@ -5,8 +5,6 @@ from .models import Sheet
 
 class SheetListView(ListView):
     model = Sheet
-    context_object_name ='objects'
-    
 
 class SheetDetailView(DetailView):
     model = Sheet
