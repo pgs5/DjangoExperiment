@@ -10,9 +10,9 @@ class Sheet(models.Model):
     date_posted = models.DateTimeField(default = timezone.now)
     author = models.ForeignKey(User, on_delete = models.CASCADE)
     composer = models.TextField()
-    sheet_pdf = models.FileField( default = 'default.jpg', upload_to = 'sheet_music')
+    sheet_pdf = models.FileField( default = 'default.pdf', upload_to = 'sheet_music')
     initial_key = models.CharField(max_length=16)
-    
+
     def __str__(self):
         return str(self.title)
 
