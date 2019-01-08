@@ -1,4 +1,7 @@
-/media
-*/*/*.pyc
+/media/
+/polls/
+**/*.pyc
 */migrations/
+*/__pycache__/
+db.sqlite3
 .gitignore
